@@ -2005,6 +2005,8 @@ button[disabled] {
             position: absolute;
             width: 280px;
             padding: 11px 27px;
+            -webkit-box-sizing: border-box;
+                    box-sizing: border-box;
             left: 0;
             right: 0;
             bottom: 0;
@@ -2014,7 +2016,7 @@ button[disabled] {
     .hero__image-box {
             z-index: 0;
             max-width: 280px;
-            margin-top: 30px
+            margin-top: -14px
     }
 
 .category {
@@ -2277,6 +2279,6 @@ button[disabled] {
 
 .hero {
             background: url("../images/background/hero-mobile@2x.jpg") no-repeat top center;
-            background-size: 320px auto
+            background-size: 100% auto
 }
         }
