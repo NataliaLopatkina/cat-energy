@@ -1,0 +1,176 @@
+extends ../../_blocks/template/template.pug
+
+block data
+    -
+        var data = {
+            styles: {
+                link: "catalog",
+            },
+
+            activeElement: "Каталог продукции",
+            menuColor: "dark",
+            backgroundMap: true,
+        }
+
+block content
+    section(class="products")
+        div(class="box products__box")
+            h1(class="title products__title") Каталог продукции
+            div(class="products__list")
+                include ../../_blocks/product/product.pug
+                -
+                    var products = [
+                        {
+                            product: true,
+                            img: "product-1",
+                            imgMobile: "product-mobile-1",
+                            title: "Cat Energy pro",
+                            properties: true,
+                            weight: "500 г",
+                            taste: "Курица",
+                            cost: "700 р",
+                            buttonOrder: true,
+                        },
+
+                        {
+                            product: true,
+                            sizeProduct: "l",
+                            img: "product-2",
+                            imgMobile: "product-mobile-2",
+                            title: "Cat Energy pro",
+                            properties: true,
+                            weight: "1000 г",
+                            taste: "Курица",
+                            cost: "1000 р",
+                            buttonOrder: true,
+                        },
+
+                        {
+                            product: true,
+                            img: "product-3",
+                            imgMobile: "product-mobile-3",
+                            title: "Cat Energy pro",
+                            properties: true,
+                            weight: "500 г",
+                            taste: "Рыба",
+                            cost: "700 р",
+                            buttonOrder: true,
+                        },
+
+                        {
+                            product: true,
+                            sizeProduct: "l",
+                            img: "product-4",
+                            imgMobile: "product-mobile-4",
+                            title: "Cat Energy pro",
+                            properties: true,
+                            weight: "1000 г",
+                            taste: "Рыба",
+                            cost: "1000 р",
+                            buttonOrder: true,
+                        },
+
+                        {
+                            product: true,
+                            img: "product-5",
+                            imgMobile: "product-mobile-5",
+                            title: "Cat Energy slim",
+                            properties: true,
+                            weight: "500 г",
+                            taste: "Гречка",
+                            cost: "400 р",
+                            buttonOrder: true,
+                        },
+
+                        {
+                            product: true,
+                            sizeProduct: "l",
+                            img: "product-6",
+                            imgMobile: "product-mobile-6",
+                            title: "Cat Energy slim",
+                            properties: true,
+                            weight: "1000 г",
+                            taste: "Гречка",
+                            cost: "700 р",
+                            buttonOrder: true,
+                        },
+
+                        {
+                            product: true,
+                            img: "product-7",
+                            imgMobile: "product-mobile-7",
+                            title: "Cat Energy slim",
+                            properties: true,
+                            weight: "500 г",
+                            taste: "Рис",
+                            cost: "500 р",
+                            buttonOrder: true,
+                        },
+
+                        {
+                            moreProduct: true,
+                            backgroundProduct: "background-transparent",
+                            title: "Показать еще 100500 товаров",
+                            text: "На самом деле вкусов гораздо больше!",
+                            buttonMore: true,
+                        },
+                    ]
+
+                each obj in products
+                    +product(obj)(class="products__item")
+
+    div(class="additional-products")
+        div(class="box additional-products__box")
+            h2(class="additional-products__title") Дополнительные товары
+            div(class="additional-products__content")
+                table(class="additional-products__properties")
+                    tr(class="additional-products__tr")
+                        td(class="additional-products__name") Сахарозаменитель
+                        td(class="additional-products__volume") 1 Упаковка 
+                            span(class="additional-products__volume-quality") (100 г)
+                        td(class="additional-products__cost") 200 р.
+                        td(class="additional-products__order")
+                            include ../../_blocks/button/button.pug
+                            +button({
+                                typeButton: "button",
+                                text: "Заказать",
+                                mod: ["size-l", "text-s"],
+                            })(class="additional-products__button")
+                    tr(class="additional-products__tr")
+                        td(class="additional-products__name") Питьевая вода
+                        td(class="additional-products__volume") 5 литров
+                        td(class="additional-products__cost") 50 Р.
+                        td(class="additional-products__order")
+                            include ../../_blocks/button/button.pug
+                            +button({
+                                typeButton: "button",
+                                text: "Заказать",
+                                mod: ["size-l", "text-s"],
+                            })(class="additional-products__button")
+                    tr(class="additional-products__tr")
+                        td(class="additional-products__name") Молоко
+                        td(class="additional-products__volume") 1 литр
+                        td(class="additional-products__cost") 100 Р.
+                        td(class="additional-products__order")
+                            include ../../_blocks/button/button.pug
+                            +button({
+                                typeButton: "button",
+                                text: "Заказать",
+                                mod: ["size-l", "text-s"],
+                            })(class="additional-products__button")
+                    tr(class="additional-products__tr")
+                        td(class="additional-products__name") Витамины
+                        td(class="additional-products__volume") 1 упаковка 
+                            span(class="additional-products__volume-quality") (30 г)
+                        td(class="additional-products__cost") 300 Р.
+                        td(class="additional-products__order")
+                            include ../../_blocks/button/button.pug
+                            +button({
+                                typeButton: "button",
+                                text: "Заказать",
+                                mod: ["size-l", "text-s"],
+                            })(class="additional-products__button")
+                div(class="additional-products__present")
+                    div(class="additional-products__image-box")
+                        img(class="additional-products__img" src="images/svg-icon/gift.png" alt="Gift")
+                    p(class="additional-products__text") Закажите все<br> и получите чехол для<br> кота в подарок!

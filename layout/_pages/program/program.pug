@@ -1,0 +1,89 @@
+extends ../../_blocks/template/template.pug
+
+block data
+    -
+        var data = {
+            styles: {
+                link: "program",
+            },
+
+            activeElement: "Подбор программы",
+            menuColor: "dark",
+            backgroundMap: true,
+        }
+
+block content
+    section(class="program")
+        div(class="box program__content")
+            h1(class="title program__title") Подбор программы
+        form(class="form" action="#5" method="post")
+            div(class="box")
+                p(class="form__text") Заполните анкету и мы подберем программу питания для вашего кота
+            div(class="box form__box")
+                div(class="form__item form__item--personal-data")
+                    div(class="form-control form__control-item")
+                        label(class="form-control__label form-control__label--name" for="name") Имя:*
+                        input(class="form-control__input" type="text" placeholder="Барсик" id="name")
+                    div(class="form-control form__control-item")
+                        label(class="form-control__label form-control__label--weight" for="weight") Вес (кг):*
+                        input(class="form-control__input" type="text" placeholder="7" id="weight")
+                    div(class="form-control form__control-item")
+                        label(class="form-control__label  form-control__label--age" for="age") Возраст (лет):
+                        input(class="form-control__input" type="text" placeholder="7" id="age")
+                div(class="form__item form__item--radio")
+                    div(class="form-control form__control-item")
+                        input(class="form-control__input form-control__input--radio" type="radio" id="weight-loss" name="weight" checked)
+                        label(class="form-control__label" for="weight-loss") Похудение
+                    div(class="form-control form__control-item")
+                        input(class="form-control__input form-control__input--radio" type="radio" id="weight-gain" name="weight")
+                        label(class="form-control__label" for="weight-gain") Набор массы
+                    div(class="form-control form__control-item")
+                        input(class="form-control__input form-control__input--radio" type="radio" id="advice" name="weight")
+                        label(class="form-control__label" for="advice") Не знаю (Нужен ваш совет)
+            div(class="form__box")
+                div(class="form__box-title")
+                    div(class="box")
+                        h2(class="form__title") Контактные данные (владельца кота)
+                div(class="box")
+                    div(class="form__item form__item--contact-data")
+                        div(class="form-control form__control-item form-control--email")
+                            label(class="form-control__label form-control__label--email" for="email") E-mail:*
+                            input(class="form-control__input" type="email" placeholder="kuklachev@gmail.com" id="email")
+                        div(class="form-control form__control-item form-control--phone")
+                            label(class="form-control__label form-control__label--phone" for="phone") Телефон:*
+                            input(class="form-control__input form-control__input--phone" type="phone" placeholder="8 (960) 900-60-90" id="phone")
+            div(class="form__box")
+                div(class="form__box-title")
+                    div(class="box")
+                        h2(class="form__title form__title--comments") Комментарий
+                div(class="box")
+                    div(class="form__item form__item--comments")
+                        div(class="form-control form__control-item")
+                            textarea(class="form-control__input" type="text" placeholder="Расскажите обо всех повадках кота" id="email")
+            div(class="form__box")
+                div(class="form__box-title")
+                    div(class="box")
+                        h2(class="form__title form__title--additionally") Дополнительно
+                div(class="box")
+                    div(class="form__item form__item--additionally")
+                        div(class="form-control form__control-item")
+                            input(class="form-control__input form-control__input--checkbox" type="checkbox" id="sweetener" name="checkbox")
+                            label(class="form-control__label" for="sweetener") Сахарозаменитель
+                        div(class="form-control form__control-item")
+                            input(class="form-control__input form-control__input--checkbox" type="checkbox" id="water" name="checkbox")
+                            label(class="form-control__label" for="water") Питьевая вода
+                        div(class="form-control form__control-item")
+                            input(class="form-control__input form-control__input--checkbox" type="checkbox" id="milk" name="checkbox")
+                            label(class="form-control__label" for="milk") Молоко
+                        div(class="form-control form__control-item")
+                            input(class="form-control__input form-control__input--checkbox" type="checkbox" id="vitamins" name="checkbox")
+                            label(class="form-control__label" for="vitamins") Витамины
+                    div(class="form__item form__item--requared")
+                        include ../../_blocks/button/button.pug
+                        +button({
+                            typeButton: "submit",
+                            text: "Отправить заявку",
+                            mod: ["size-xl"],
+                        })(class="form__item-button")
+
+                        p(class="form__item-text") * — Обязательные поля

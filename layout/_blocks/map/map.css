@@ -1,0 +1,61 @@
+@import "../map-address/map-address.css";
+
+.map {
+    background: url("../images/map/map.png") no-repeat center;
+    height: 400px;
+    width: 100%;
+
+    @media (min-resolution: 144dpi) and (min-resolution: 1.5dppx) {
+        background: url("../images/map/map@2x.png") no-repeat center;
+        background-size: 1440px auto;
+
+        @media (--M) {
+            background: none;
+            height: 600px;
+        }
+
+        @media (--XS) {
+            height: 477px;
+        }
+    }
+
+    @media (--M) {
+        display: flex;
+        flex-direction: column-reverse;
+        background: none;
+        height: 600px;
+    }
+
+    &--catalog {
+        @media (--M) {
+            background: #f2f2f2;
+
+            @media (min-resolution: 144dpi) and (min-resolution: 1.5dppx) {
+                background: #f2f2f2;
+            }
+
+            .map-address {
+                background: #f2f2f2;
+            }
+        }
+    }
+
+    &__box {
+        position: relative;
+    }
+
+    &__iframe {
+        width: 100%;
+        border: none;
+        position: absolute;
+
+        @media (--M) {
+            position: relative;
+            height: 600px;
+        }
+
+        @media (--XS) {
+            height: 477px;
+        }
+    }
+}

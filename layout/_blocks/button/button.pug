@@ -1,0 +1,22 @@
+mixin button(obj)
+
+    - var tag = "button"
+    - var typeButton = ""
+    - var href = ""
+
+    if obj.tag
+        - tag = obj.tag
+
+    if obj.typeButton
+        - typeButton = obj.typeButton
+
+    if obj.href
+        - href = obj.href
+
+    - var classMods = ""
+    if obj.mod
+        each el in obj.mod
+            - classMods = classMods + " button--" + el
+
+    #{tag}(class="button" + classMods type=obj.typeButton href=obj.href)&attributes(attributes)
+        span(class="button__text") !{obj.text}

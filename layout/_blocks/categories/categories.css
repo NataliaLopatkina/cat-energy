@@ -1,0 +1,30 @@
+@import "../category/category.css";
+
+.categories {
+    @media (--XS) {
+        padding-top: 22px;
+    }
+
+    &__box {
+        display: flex;
+        justify-content: space-between;
+        
+        @media (--M) {
+            flex-direction: column;
+        }
+    }
+
+    &__item {
+        @media (--M) {
+            margin-bottom: 30px;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+
+        @media (--XS) {
+            margin-bottom: 20px;
+        }
+    }
+}

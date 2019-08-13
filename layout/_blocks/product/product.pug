@@ -1,0 +1,50 @@
+mixin product(obj)
+    - var backgroundProduct = ""
+    if obj.backgroundProduct
+        - backgroundProduct = " product--" + obj.backgroundProduct
+
+    - var sizeProduct = ""
+    if obj.sizeProduct
+        - sizeProduct = " product--size-" + obj.sizeProduct
+
+    div(class="product" + sizeProduct + backgroundProduct)&attributes(attributes)
+        div(class="image-box product__image-box product__image-box--mobile")
+            if obj.product
+                picture
+                    source(class="image-box__img product__img" srcset="images/products/" + obj.imgMobile + ".png" alt="Product" media="(max-width: 575px)")
+                    img(class="image-box__img product__img" src="images/products/" + obj.img + ".png" srcset="images/products/" + obj.img + "@2x" + ".png" + " 2x" alt="Product")
+            if obj.moreProduct
+                button(class="product__button-more" type="button")
+                    img(class="product__button-img" src="images/svg-icon/plus.svg" alt="More product")
+        
+        div(class="product__description")
+            p(class="product__title") !{obj.title} 
+                span(class="product__weight") !{obj.weight}
+            if obj.properties
+                table(class="product__properties")
+                    tr(class="product__tr")
+                        td(class="product__text") Объем
+                        td(class="product__text product__text--right") !{obj.weight}
+                    tr(class="product__tr")
+                        td(class="product__text") Вкус
+                        td(class="product__text product__text--right") !{obj.taste}
+                    tr(class="product__tr")
+                        td(class="product__text") Цена
+                        td(class="product__text product__text--cost product__text--right") !{obj.cost}
+            if obj.text
+                p(class="product__text") !{obj.text}
+
+        include ../../_blocks/button/button.pug
+        if obj.buttonOrder
+            +button({
+                typeButton: "button",
+                text: "Заказать",
+                mod: ["size-m", "text-s"],
+            })(class="product__button")
+
+        if obj.buttonMore
+            +button({
+                typeButton: "button",
+                text: "Показать все",
+                mod: ["size-m", "text-s", "grey"],
+            })(class="product__button")

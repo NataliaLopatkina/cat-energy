@@ -1,0 +1,47 @@
+@import "../nav/nav.css";
+
+.header {
+    padding-top: 54px;
+
+    @media (--M) {
+        padding-top: 24px;
+    }
+
+    @media (--XS) {
+        padding-top: 11px;
+    }
+
+    &--dark {
+        .nav__link {
+            color: #111111;
+        }
+
+        .nav__link--active {
+            border-bottom: 2px solid var(--main-color);
+        }
+    }
+
+    &__box {
+        display: flex;
+        justify-content: space-between;
+
+        @media (--S) {
+            flex-direction: column;
+        }
+    }
+
+    &__actions {
+        @media (--S) {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 16px;
+        }
+    }
+
+    &__button-menu {
+        @media (--XS) {
+            margin-top: 3px;
+        }
+    }
+}

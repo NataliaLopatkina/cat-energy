@@ -1,0 +1,51 @@
+@import "../advantage/advantage.css";
+
+.advantages {
+    padding-top: 73px;
+    padding-bottom: 126px;
+
+    @media (--M) {
+        border-bottom: 1px solid #e6e6e6;
+        padding-top: 45px;
+        padding-bottom: 0;
+        padding-bottom: 102px;
+    }
+
+    @media (--XS) {
+        padding-top: 29px;
+        padding-bottom: 22px;
+        border-bottom: none;
+    }
+
+    &__list {
+        display: flex;
+        justify-content: space-between;
+
+        @media (--M) {
+            flex-wrap: wrap;
+            padding-right: 80px;
+        }
+
+        @media (--S) {
+            padding-right: 0;
+        }
+    }
+
+    &__item {
+        @media (--M) {
+            margin-bottom: 134px;
+        }
+
+        @media (--XS) {
+            margin-bottom: 0;
+        }
+    }
+
+    &__title {
+        margin-bottom: 73px;
+
+        @media (--XS) {
+            margin-bottom: 40px;
+        }
+    }
+}

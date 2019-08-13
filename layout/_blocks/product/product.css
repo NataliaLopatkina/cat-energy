@@ -1,0 +1,228 @@
+.product {
+    width: 245px;
+    padding: 0 25px 40px 25px;
+    box-sizing: border-box;
+    margin: 40px;
+    background: var(--background-color);
+
+    @media (--L) {
+        width: 280px;
+        margin: 20px;
+    }
+    
+    @media (--M) {
+        width: 324px;
+        padding: 0 37px 40px 37px;
+    }
+
+    @media (--S) {
+        width: 225px;
+        padding: 20px;
+        margin: 15px;
+    }
+
+    @media (--XS) {
+        width: 100%;
+        padding: 0;
+        padding-bottom: 24px;
+        border-bottom: 1px solid #ededed;
+        margin: 0;
+        background: transparent;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    &--size-l {
+        .product__image-box {
+            max-width: 195px;
+        }
+    }
+
+    &--background-transparent {
+        background: transparent;
+        border: 1px solid #cdcdcd;
+
+        @media (--XS) {
+            border: none;
+            flex-direction: column;
+            padding-top: 26px;
+        }
+
+        .product__image-box {
+            margin-top: -95px;
+            margin-bottom: 50px;
+
+            @media (--XS) {
+                max-width: 30px;
+                max-height: 30px;
+                padding: 0;
+                margin: 0 auto;
+                margin-bottom: 2px;
+            }
+        }
+
+        .product__description {
+            justify-content: stretch;
+            width: 100%;
+        }
+
+        .product__title {
+            max-width: 134px;
+            margin: 0 auto;
+            margin-bottom: 20px;
+
+            @media (--XS) {
+                max-width: 100%;
+                text-align: center;
+                margin-bottom: 10px;
+            }
+        }
+
+        .product__text {
+            line-height: calc(18/16);
+            text-align: center;
+            border: none;
+            margin-bottom: 44px;
+
+            @media (--M) {
+                max-width: 167px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            @media (--XS) {
+                max-width: 100%;
+                width: 100%;
+                text-align: center;
+                margin: 0;
+            }
+        }
+    }
+
+    &__image-box {
+        max-width: 161px;
+        height: 208px;
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 2px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        margin-top: -81px;
+        margin-bottom: 36px;
+
+        @media (--XS) {
+            margin: 0;
+            max-width: 140px;
+            height: 144px;
+            padding-left: 0;
+        }
+    }
+
+    &__button-more {
+        background: none;
+        border: none;
+        outline: none;
+        padding: 0;
+        max-width: 60px;
+        margin: 0 auto;
+    }
+
+    &__description {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin-bottom: 33px;
+
+        @media (--XS) {
+            flex-direction: row;
+            flex-wrap: wrap;
+            width: 140px;
+            padding-top: 21px;
+            margin-bottom: 22px;
+        }
+    }
+
+    &__title,
+    &__weight {
+        font-size: 20px;
+        line-height: calc(20/20);
+        color: var(--text-dark);
+        text-transform: uppercase;
+        width: 100%;
+        text-align: center;
+
+        @media (--XS) {
+            font-size: 16px;
+            line-height: calc(20/16);
+            text-align: left;
+        }
+    }
+
+    &__title {
+        max-width: 159px;
+        margin: 0 auto;
+
+        @media (--XS) {
+            max-width: 100px;
+            margin: 0;
+        }
+    }
+
+    &__properties {
+        width: 100%;
+        border-collapse: collapse;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 22px;
+        max-width: 169px;
+
+        @media (--M) {
+            max-width: 100%;
+        }
+
+        @media (--XS) {
+            margin-top: 13px;
+        }
+    }
+
+    &__text {
+        font-family: "Arial";
+        font-size: 16px;
+        line-height: calc(16/16);
+        color: var(--text--light);
+        padding-top: 6px;
+        padding-bottom: 8px;
+        border-bottom: 1px solid #cdcdcd;
+
+        @media (--XS) {
+            font-size: 12px;
+            line-height: calc(16/12);
+            padding: 0;
+            border-bottom: 0;
+        }
+    }
+
+    &__text--right {
+        text-align: right;
+    }
+
+    &__text--cost {
+        text-transform: uppercase;
+    }
+
+    &__button {
+        display: block;
+        max-width: 169px;
+        width: 100%;
+        margin: 0 auto;
+
+        @media (--M) {
+            max-width: 100%;
+        }
+    }
+
+    &__button-img {
+        width: 100%;
+    }
+}

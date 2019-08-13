@@ -1,0 +1,58 @@
+.button-menu {
+    display: none;
+
+    @media (--S) {
+        display: block;
+        width: 24px;
+        height: 18px;
+        border: none;
+        padding: 0;
+        background: none;
+        outline: none;
+    }
+
+    &__container {
+        @media (--S) {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background: #222222;
+            position: relative;
+
+            &:before,
+            &:after {
+                position: absolute;
+                content: "";
+                width: 24px;
+                height: 2px;
+                background: #222222;
+                left: 0;
+            }
+
+            &:before {
+                top: -8px;
+            }
+
+            &:after {
+                bottom: -8px;
+            }
+        }
+    }
+
+    &--closed {
+        @media (--S) {
+            .button-menu__container {
+                transform: rotate(45deg);
+
+                &:before {
+                    transform: rotate(90deg);
+                    top: 0;
+                }
+
+                &:after {
+                    display: none;
+                }
+            }
+        }
+    }
+}

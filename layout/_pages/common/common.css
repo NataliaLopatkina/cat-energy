@@ -1,0 +1,12 @@
+@import "../../_blocks/normalize/normalize.css";
+@import "../../_blocks/reset/reset.css";
+
+/* Styles */
+@import "../../_blocks/page/page.css";
+@import "../../_blocks/box/box.css";
+@import "../../_blocks/vars-color/vars-color.css";
+@import "../../_blocks/header/header.css";
+@import "../../_blocks/title/title.css";
+@import "../../_blocks/button/button.css";
+@import "../../_blocks/map/map.css";
+@import "../../_blocks/footer/footer.css";

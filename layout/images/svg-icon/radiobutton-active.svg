@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40">
+    <defs>
+        <clipPath id="ctama">
+            <path fill="#fff" d="M20 0c11.046 0 20 8.954 20 20s-8.954 20-20 20S0 31.046 0 20 8.954 0 20 0z"/>
+        </clipPath>
+    </defs>
+    <g>
+        <g>
+            <path d="M20 0c11.046 0 20 8.954 20 20s-8.954 20-20 20S0 31.046 0 20 8.954 0 20 0z"/>
+            <path fill="#ffffff" stroke="#cdcdcd" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="50" stroke-width="2" d="M20 0c11.046 0 20 8.954 20 20s-8.954 20-20 20S0 31.046 0 20 8.954 0 20 0z" clip-path="url(&quot;#ctama&quot;)"/></g><g><path d="M20 11a9 9 0 1 1 0 18 9 9 0 0 1 0-18z"/>
+            <path fill="#68b738" d="M20 11a9 9 0 1 1 0 18 9 9 0 0 1 0-18z"/>
+        </g>
+    </g>
+</svg>

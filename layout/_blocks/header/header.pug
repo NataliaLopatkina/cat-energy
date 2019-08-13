@@ -1,0 +1,18 @@
+mixin header(obj)
+    - var menuColor = ""
+    if data.menuColor
+        - menuColor = " header--" + data.menuColor
+
+    header(class="header" + menuColor)
+        div(class="box header__box")
+            div(class="header__actions")
+                a(class="logo header__logo" href="index.html")
+                    picture
+                        source(class="logo__img" srcset="images/svg-icon/logo-mobile.svg" alt="Logo" media="(max-width: 767px)")
+                        source(class="logo__img" srcset="images/svg-icon/logo-tablet.svg" alt="Logo" media="(max-width: 991px)")
+                        img(class="logo__img" src="images/svg-icon/logo-desktop.svg" alt="Logo")
+                button(class="button-menu header__button-menu")
+                    span(class="button-menu__container")
+
+            include ../../_blocks/nav/nav.pug
+            +nav(data.activeElement)

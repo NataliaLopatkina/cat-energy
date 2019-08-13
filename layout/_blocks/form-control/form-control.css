@@ -1,0 +1,215 @@
+.form-control {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    position: relative;
+
+    &:before {
+        position: absolute;
+        right: 20px;
+
+        @media (--XS) {
+            right: 16px;
+        }
+    }
+
+    &--email {
+        @media (--XS) {
+            margin-bottom: 15px;
+        }
+
+        &:before {
+            content: url("../images/svg-icon/mail.svg");
+        }
+
+        .form-control__input {
+            padding-right: 50px;
+
+            @media (--M) {
+                padding: 10px 20px;
+            }
+
+            @media (--XS) {
+                padding: 12px 14px;
+            }
+        }
+    }
+
+    &--phone {
+
+        &:before {
+            content: url("../images/svg-icon/phone.svg");
+
+            @media (--XS) {
+                top: 13px;
+                right: 13px;
+            }
+        }
+        
+        .form-control__input {
+            padding-right: 50px;
+
+            @media (--M) {
+                padding: 10px 20px;
+            }
+
+            @media (--XS) {
+                padding: 12px 15px;
+            }
+        }
+    }
+
+    &__label {
+        font-size: 20px;
+        line-height: calc(20/20);
+        color: #222222;
+        text-transform: uppercase;
+        max-width: 100%;
+        width: 100%;
+        margin-right: 18px;
+
+        @media (--XS) {
+            font-size: 16px;
+            line-height: calc(18/16);
+            margin-right: 14px;
+        }
+    }
+
+    &__label--name {
+        max-width: 46px;
+
+        @media (--XS) {
+            max-width: 37px;
+        }
+    }
+
+    &__label--weight {
+        max-width: 77px;
+
+        @media (--XS) {
+            max-width: 62px;
+        }
+    }
+
+    &__label--age {
+        max-width: 117px;
+
+        @media (--XS) {
+            max-width: 94px;
+        }
+    }
+
+    &__label--email {
+        max-width: 66px;
+
+        @media (--M) {
+            max-width: 63px;
+        }
+
+        @media (--XS) {
+            max-width: 50px;
+            margin-right: 11px;
+        }
+    }
+
+    &__label--phone {
+        max-width: 80px;
+
+        @media (--XS) {
+            max-width: 62px;
+        }
+    }
+
+    &__input {
+        font-size: 20px;
+        line-height: calc(20/20);
+        color: #444444;
+        text-transform: uppercase;
+        width: calc(100% - 50px);
+        padding: 10px 18px;
+        border: 1px solid #f0f0f0;
+        outline: none;
+
+        @media (--XS) {
+            font-size: 16px;
+            line-height: calc(18/16);
+            padding: 13px 14px;
+        }
+
+        &::placeholder {
+            color: #444444;
+        }
+    }
+
+    &__input--radio {
+        width: auto;
+        height: auto;
+        display: none;
+
+        & + .form-control__label {
+            padding-left: 46px;
+            position: relative;
+            margin-bottom: 11px;
+
+            &:before {
+                position: absolute;
+                content: url("../images/svg-icon/radiobutton.svg");
+                width: 40px;
+                height: 40px;
+                top: -9px;
+                left: 0;
+                cursor: pointer;
+
+                @media (--XS) {
+                    width: 30px;
+                    height: 30px;
+                    top: -6px;
+                }
+            }
+        }
+
+        &:checked + .form-control__label {
+            &:before {
+                content: url("../images/svg-icon/radiobutton-active.svg");
+            }
+        }
+    }
+
+    &__input--checkbox {
+        width: auto;
+        height: auto;
+        display: none;
+
+        & + .form-control__label {
+            padding-left: 58px;
+            position: relative;
+
+            @media (--XS) {
+                padding-left: 45px;
+            }
+
+            &:before {
+                position: absolute;
+                content: url("../images/svg-icon/checkbox.png");
+                top: -8px;
+                left: 0;
+                cursor: pointer;
+
+                @media (--XS) {
+                    content: url("../images/svg-icon/checkbox-mobile.png");
+                    top: -5px;
+                }
+            }
+        }
+
+        &:checked + .form-control__label {
+            &:before {
+                content: url("../images/svg-icon/checkbox-active.png");
+
+                @media (--XS) {
+                    content: url("../images/svg-icon/checkbox-mobile-active.png");
+                }
+            }
+        }
+    }
+}

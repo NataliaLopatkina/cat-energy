@@ -1,0 +1,37 @@
+@import "../form/form.css";
+
+.program {
+    padding-top: 75px;
+    padding-bottom: 83px;
+
+    @media (--M) {
+        padding-top: 58px;
+        padding-bottom: 72px;
+    }
+
+    @media (--S) {
+        padding-bottom: 58px;
+    }
+
+    @media (--XS) {
+        padding-top: 0;
+        padding-bottom: 31px;
+    }
+
+    &__title {
+        margin-bottom: 55px;
+
+        @media (--S) {
+            margin-bottom: 35px;
+        }
+
+        @media (--XS) {
+            padding-top: 27px;
+            padding-left: 20px;
+            border-top: 1px solid #ededed;
+            margin-left: -20px;
+            margin-right: -20px;
+            margin-bottom: 37px;
+        }
+    }
+}

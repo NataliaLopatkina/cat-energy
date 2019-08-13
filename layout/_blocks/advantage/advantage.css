@@ -1,0 +1,126 @@
+.advantage {
+    max-width: 246px;
+    position: relative;
+
+    @media (--L) {
+        max-width: 215px;
+    }
+
+    @media (--M) {
+        max-width: 245px;
+        width: 100%;
+    }
+
+    @media (--S) {
+        max-width: 225px;
+    }
+
+    @media (--XS) {
+        max-width: 100%;
+        display: flex;
+        padding-bottom: 20px;
+    }
+
+    &:first-child {
+        .advantage__background-text {
+            right: 17px;
+
+            @media (--S) {
+                right: 0;
+            }
+        }
+    }
+
+    &:last-child {
+        .advantage__background-text {
+            right: -4px;
+
+            @media (--S) {
+                right: 0;
+            }
+        }
+    }
+
+    &__image-background {
+        width: 80px;
+        height: 80px;
+        background-color: var(--main-color);
+        margin-bottom: 31px;
+
+        @media (--XS) {
+            margin-right: 20px;
+            margin-bottom: 0;
+            width: 60px;
+            height: 60px;
+        }
+    }
+
+    &__image {
+        max-width: 26px;
+        margin: auto;
+        padding-top: 25px;
+
+        @media (--XS) {
+            padding-top: 15px;
+        }
+    }
+
+    &__image--powder-nutrition {
+        max-width: 29px;
+        padding-top: 24px;
+    }
+
+    &__image--cutlery {
+        max-width: 23px;
+        padding-top: 24px;
+    }
+
+    &__description {
+        @media (--XS) {
+            width: 200px;
+        }
+    }
+
+    &__text {
+        font-family: "Arial", sans-serif;
+        font-size: 16px;
+        line-height: calc(24/16);
+        color: var(--text-light);
+
+        @media (--XS) {
+            font-size: 14px;
+            line-height: calc(18/14);
+            padding-top: 3px;
+        }
+
+        br {
+            @media (--XS) {
+                display: none;
+            }
+        }
+    }
+
+    &__background-text {
+        font-size: 281px;
+        line-height: calc(281/281);
+        color: var(--background-color);
+        position: absolute;
+        top: -39px;
+        right: 0;
+        z-index: -1;
+
+        @media (--L) {
+            font-size: 200px;
+            top: 0;
+        }
+
+        @media (--M) {
+            font-size: 281px;
+            top: -39px;
+        }
+
+        @media (--XS) {
+            display: none;
+        }
+    }
+}

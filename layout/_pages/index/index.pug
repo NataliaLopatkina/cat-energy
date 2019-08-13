@@ -1,0 +1,158 @@
+extends ../../_blocks/template/template.pug
+
+block data
+    -
+        var data = {
+            styles: {
+                link: "index",
+            },
+
+            activeElement: "Главная",
+        }
+
+block content
+    div(class="hero")
+        div(class="box hero__box")
+            div(class="hero__description")
+                h1(class="title hero__title") Функциональное питание для котов
+                p(class="hero__text") Занялся собой? Займись котом!
+                include ../../_blocks/button/button.pug
+                +button({
+                    tag: "a",
+                    href: "#5",
+                    text: "Подобрать программу",
+                })
+            div(class="image-box hero__image-box")
+                picture
+                    source(
+                        class="image-box__img hero__img",
+                        srcset="images/hero/hero-mobile.png",
+                        alt="Hero",
+                        media="(max-width: 576px)"
+                    )
+                    source(
+                        class="image-box__img hero__img",
+                        srcset="images/hero/hero-tablet.png",
+                        alt="Hero",
+                        media="(max-width: 991px)"
+                    )
+
+                    img(
+                        class="image-box__img hero__img",
+                        src="images/hero/hero.png",
+                        srcset="images/hero/hero@2x.png",
+                        alt="Hero")
+
+    section(class="categories")
+        div(class="box categories__box")
+            include ../../_blocks/category/category.pug
+
+            -
+                var categories = [
+                    {
+                        img: "cat-slim",
+                        title: "Похудение",
+                        text: "Ваш кот весит больше собаки и почти утратил способность лазить по деревьям? Пора на диету! Cat Energy Slim поможет вашему питомцу сбросить лишний вес.",
+                        typeText: "slim",
+                        link: "Каталог Slim",
+                    },
+
+                    {
+                        img: "cat-pro",
+                        title: "Набор Массы",
+                        text: "Заработать авторитет среди дворовых котов и даже собак? Серия Cat Energy Pro поможет вашему коту нарастить необходимые мышцы!",
+                        typeText: "pro",
+                        link: "Каталог Pro",
+                    },
+                ]
+
+            each obj in categories
+                +category(obj)
+
+    section(class="advantages")
+        div(class="box advantages__box")
+            h2(class="title advantages__title") Как это работает
+            div(class="advantages__list")
+                include ../../_blocks/advantage/advantage.pug
+                -
+                    var advantages = [
+                        {
+                            itemIndent: true,
+                            img: "advantage-1",
+                            typeIcon: "functional-nutrition",
+                            text: "Функциональное питание содержит только полезные питательные вещества.",
+                            backgroundText: "1",
+                        },
+
+                        {
+                            itemIndent: true,
+                            img: "advantage-2",
+                            typeIcon: "powder-nutrition",
+                            text: "Выпускается в виде порошка, который нужно лишь залить кипятком и готово.",
+                            backgroundText: "2",
+                        },
+
+                        {
+                            img: "advantage-3",
+                            typeIcon: "cutlery",
+                            text: "Замените один-два приема обычной еды на наше фунцкциональное питание.",
+                            backgroundText: "3",
+                        },
+
+                        {
+                            img: "advantage-4",
+                            typeIcon: "time",
+                            text: "Уже через месяц наслаждайтесь изменениями к лучшему<br> вашего питомца!",
+                            backgroundText: "4",
+                        },
+                    ]
+
+                each obj in advantages
+                    +advantage(obj)
+
+
+    section(class="example")
+        div(class="box")
+            h3(class="title example__title") Живой пример
+        div(class="example__content")
+            div(class="box example__box")
+                div(class="example__description")
+                    p(class="example__text") Борис сбросил 5 кг за 2 месяца, просто заменив свой обычный корм на Cat Energy Slim. Отличный результат без изнуряющих тренировок! При этом он не менял своих привычек и по-прежнему спит по 16 часов в день. 
+                    div(class="example__statistic")
+                        div(class="example-statistic example__statistic-item")
+                            include ../../_blocks/statistic-item/statistic-item.pug
+                            -
+                                var statistics = [
+                                    {
+                                        data: "5 кг",
+                                        typeText: "weight",
+                                        text: "Снижение веса",
+                                    },
+
+                                    {
+                                        data: "60 дней",
+                                        typeText: "time",
+                                        text: "Затрачено времени",
+                                    },
+                                ]
+
+                            each obj in statistics
+                                +statistic-item(obj)
+
+                        div(class="example__expenses")
+                            p(class="example__expenses-text") Затраты на питание:
+                            p(class="example__expenses-text") 15 000 руб.
+
+                div(class="example__result")
+                    div(class="image-box example__image-box")
+                        picture
+                            source(class="image-box__img" srcset="images/result/result-mobile.png" alt="Result" media="(max-width: 575px)")
+                            source(class="image-box__img" srcset="images/result/result-tablet.png" alt="Result" media="(max-width: 991px)")
+                            img(class="image-box__img" src="images/result/result.png" srcset="images/result/result@2x.png 2x" alt="Result")
+                    div(class="example-result")
+                        span(class="example-result__text") Было
+                        div(class="example-result__control")
+                            div(class="example-result__scale")
+                            div(class="example-result__toggle")
+                            div(class="example-result__toggle-center")
+                        span(class="example-result__text") Стало

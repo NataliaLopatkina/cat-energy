@@ -1,0 +1,14 @@
+.example-statistic {
+    display: flex;
+    justify-content: space-between;
+    width: 366px;
+
+    @media (--S) {
+        width: 450px;
+        margin: 0 auto;
+    }
+
+    @media (--XS) {
+        width: 280px;
+    }
+}

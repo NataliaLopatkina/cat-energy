@@ -1,0 +1,43 @@
+@import "../social-links/social-links.css";
+@import "../copyright/copyright.css";
+
+.footer {
+    background: var(--background-color);
+    padding-top: 59px;
+    padding-bottom: 57px;
+
+    @media (--M) {
+        padding-top: 56px;
+        padding-bottom: 57px;
+    }
+
+    @media (--XS) {
+        padding-top: 38px;
+        padding-bottom: 22px;
+    }
+
+    &__box {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        @media (--XS) {
+            flex-direction: column;
+        }
+    }
+
+    &__logo {
+        margin-right: 18px;
+
+        @media (--XS) {
+            margin-bottom: 31px;
+            margin-right: 0;
+        }
+    }
+
+    &__social-links {
+        @media (--XS) {
+            margin-bottom: 22px;
+        }
+    }
+}

@@ -1,0 +1,10 @@
+mixin category(obj)
+    div(class="category categories__item")&attributes(attributes)
+        header(class="category__header")
+            div(class="category__image category__image--" + obj.img)
+            p(class="category__title") !{obj.title}
+
+        div(class="category__description")
+            p(class="category__text category__text--" + obj.typeText) !{obj.text}
+            a(href="#5" class="category__link") !{obj.link}
+                img(src="images/svg-icon/right-arrow.svg" class="category__image-link" alt="Arrow link")

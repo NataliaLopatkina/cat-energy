@@ -1,0 +1,4 @@
+mixin statistic-item(obj)
+    div(class="statistic-item")
+        span(class="statistic-item__data") !{obj.data}
+        span(class="statistic-item__text statistic-item__text--" + obj.typeText) !{obj.text}

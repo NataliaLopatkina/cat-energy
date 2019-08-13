@@ -1,0 +1,12 @@
+mixin advantage(obj)
+    - var itemIndent = ""
+    if obj.itemIndent
+        - itemIndent = " advantages__item"
+
+    div(class="advantage" + itemIndent)&attributes(attributes)
+        div(class="advantage__image-background")
+            div(class="image-box advantage__image advantage__image--" + obj.typeIcon)
+                img(class="image-box__img" src="images/svg-icon/" + obj.img + ".svg" alt="Advantage")
+        div(class="advantage__description")
+            p(class="advantage__text") !{obj.text}
+        span(class="advantage__background-text") !{obj.backgroundText}
